@@ -34,8 +34,8 @@ if my_dataframe:
         edited_dataset = session.create_dataframe(editable_df)
         try:
             og_dataset.merge(edited_dataset
-                     , (og_dataset['ORDER_UID'] == edited_dataset["_1"])
-                     , [when_matched().update({'ORDER_FILLED': edited_dataset["_1"]})]
+                     , (og_dataset['ORDER_UID'] == edited_dataset["ORDER_UID"])
+                     , [when_matched().update({'ORDER_FILLED': edited_dataset["ORDER_UID"]})]
                     )
             st.success('Order(s) Updated', icon = '👍')
         except Exception as e:
