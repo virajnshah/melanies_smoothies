@@ -38,7 +38,7 @@ if my_dataframe:
                      , [when_matched().update({'ORDER_FILLED': edited_dataset["_1"]})]
                     )
             st.success('Order(s) Updated', icon = '👍')
-        except(Exception e):
+        except Exception as e:
             st.write('Something went wrong')
             st.write(e)
 else:
