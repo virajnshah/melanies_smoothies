@@ -1,6 +1,6 @@
 # Import python packages
 import streamlit as st
-from snowflake.snowpark.context import get_active_session
+
 from snowflake.snowpark.functions import col, when_matched
 
 # # Write directly to the app
@@ -15,7 +15,7 @@ Orders that need to be filled.
 # st.write("The name on your Smoothie will be: ", name_on_order)
 
 
-cnx=st.connect('snowflake')
+cnx=st.connection('snowflake')
 session=cnx.session()
 
 # session = get_active_session()
