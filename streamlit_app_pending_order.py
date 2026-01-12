@@ -32,6 +32,8 @@ if my_dataframe:
           
         og_dataset = session.table("smoothies.public.orders")
         edited_dataset = session.create_dataframe(editable_df)
+        st.write(og_dataset)
+        st.write(edited_dataset)
         try:
             og_dataset.merge(edited_dataset
                      , (og_dataset['ORDER_UID'] == edited_dataset["ORDER_UID"])
