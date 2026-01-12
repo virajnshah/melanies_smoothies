@@ -27,6 +27,8 @@ my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED
 if my_dataframe:
     editable_df = st.data_editor(my_dataframe)
     submitted = st.button('Submit')
+    og_dataset = session.table("smoothies.public.orders")
+    edited_dataset = session.create_dataframe(editable_df)
     st.write(og_dataset)
     st.write(edited_dataset)
     if submitted:
