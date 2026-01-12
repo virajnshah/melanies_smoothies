@@ -39,7 +39,7 @@ if my_dataframe:
         try:
             og_dataset.merge(edited_dataset
                      , (og_dataset['ORDER_UID'] == edited_dataset["ORDER_UID"])
-                     , [when_matched().update({'ORDER_FILLED': edited_dataset["ORDER_UID"]})]
+                     , [when_matched().update({'ORDER_FILLED': edited_dataset["ORDER_FILLED"]})]
                     )
             st.success('Order(s) Updated', icon = '👍')
         except Exception as e:
